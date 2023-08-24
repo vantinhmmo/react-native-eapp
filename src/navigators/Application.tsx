@@ -7,7 +7,9 @@ import {
 } from '@react-navigation/native';
 import { Startup } from '../screens';
 import { useTheme } from '../hooks';
+import BottomTab from './BottomTab';
 import MainNavigator from './Main';
+
 import { useFlipper } from '@react-navigation/devtools';
 import { ApplicationStackParamList } from '../../@types/navigation';
 
@@ -26,10 +28,11 @@ const ApplicationNavigator = () => {
     <SafeAreaView style={[Layout.fill, { backgroundColor: colors.card }]}>
       <NavigationContainer theme={NavigationTheme} ref={navigationRef}>
         <StatusBar barStyle={darkMode ? 'light-content' : 'dark-content'} />
-        <Stack.Navigator screenOptions={{ headerShown: false }}>
+        {/* <Stack.Navigator screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Startup" component={Startup} />
           <Stack.Screen name="Main" component={MainNavigator} />
-        </Stack.Navigator>
+        </Stack.Navigator> */}
+        <BottomTab />
       </NavigationContainer>
     </SafeAreaView>
   );
