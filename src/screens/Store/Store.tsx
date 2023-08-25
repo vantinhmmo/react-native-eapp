@@ -7,7 +7,7 @@ import BrandsList from '../Store/BrandsList';
 
 const styles = (Colors: any) => StyleSheet.create({
   container: {
-    backgroundColor: 'Colors.primary'
+    backgroundColor: Colors.primary
   },
   headerContainer: {
     backgroundColor: Colors.statusBar,

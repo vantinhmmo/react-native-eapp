@@ -13,16 +13,16 @@ const styles = StyleSheet.create({
         height: 70,
         paddingTop: 10,
         paddingBottom: 5,
+        backgroundColor: '#4f4f4f'
     },
     icon: {
         width: 30,
         height: 30,
     },
     tabBarLabelStyle: {
-        fontSize: 16
+        fontSize: 14
     }
 });
-
 
 
 function BottomTab() {
