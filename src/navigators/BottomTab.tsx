@@ -10,17 +10,16 @@ const Tab = createBottomTabNavigator();
 
 const styles = StyleSheet.create({
     tabBarStyle: {
-        height: 100,
-        paddingTop: 20,
-        paddingBottom: 10,
+        height: 70,
+        paddingTop: 10,
+        paddingBottom: 5,
     },
     icon: {
-        width: 40,
-        height: 40,
-        marginBottom: 10
+        width: 30,
+        height: 30,
     },
     tabBarLabelStyle: {
-        fontSize: 20
+        fontSize: 16
     }
 });
 

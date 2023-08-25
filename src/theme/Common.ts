@@ -24,6 +24,7 @@ export default function <C>({ Colors, ...args }: CommonParams<C>) {
         borderRadius: 10,
         paddingStart: 20,
       },
+      imageContain: { flex: 1, width: null, height: null, resizeMode: 'contain' }
     }),
   };
 }

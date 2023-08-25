@@ -7,16 +7,14 @@ import BrandsList from '../Store/BrandsList';
 
 const styles = (Colors: any) => StyleSheet.create({
   container: {
-    backgroundColor: Colors.primary
+    backgroundColor: 'Colors.primary'
   },
   headerContainer: {
     backgroundColor: Colors.statusBar,
     paddingHorizontal: 30,
-    paddingTop: 10,
-    paddingBottom: 30
   },
   headerLogo: {
-    width: 100
+    flexGrow: 1,
   },
 });
 
@@ -51,33 +49,23 @@ const DATA = [
   },
 ];
 
-type ItemProps = { title: string, image?: string, id?: string };
 
-const Store = ({ navigation }:any) => {
-  const { Layout, Images, Colors, Gutters, Fonts } = useTheme();
-
-  const init = async () => {
-
-  };
-
-  useEffect(() => {
-    init();
-  }, []);
-
+const Store = ({ navigation }: any) => {
+  const { Layout, Images, Colors, Common } = useTheme();
 
   return (
     <ScrollView style={[Layout.fullSize, styles(Colors).container]}>
       {/* header */}
       <View style={[Layout.row, Layout.justifyContentBetween, Layout.alignItemsCenter, styles(Colors).headerContainer]}>
         <View style={[styles(Colors).headerLogo]}>
-          <Image source={Images.logo1} />
+          <Image source={Images.logo1} style={{ resizeMode: 'center', width: 100 }} />
         </View>
-        <View style={[Layout.row, Layout.justifyContentBetween]}>
-          <TouchableOpacity style={[Gutters.regularHPadding]}>
-            <Image source={Images.bellIcon} />
-          </TouchableOpacity>
+        <View style={[Layout.row, Layout.justifyContentBetween, { width: 50, columnGap: 10} ]}>
           <TouchableOpacity>
-            <Image source={Images.searchIcon} />
+            <Image source={Images.bellIcon} style={{ width: 30, height: 30 }} />
+          </TouchableOpacity>
+          <TouchableOpacity >
+            <Image source={Images.searchIcon} style={{ width: 30, height: 30 }} />
           </TouchableOpacity>
         </View>
       </View>

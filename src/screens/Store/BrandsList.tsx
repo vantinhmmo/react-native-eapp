@@ -4,8 +4,7 @@ import { useTheme } from '../../hooks';
 
 const styles = (Colors: any) => StyleSheet.create({
     mainContainer: {
-        paddingHorizontal: 30,
-        paddingVertical: 40,
+        paddingHorizontal: 20,
     },
     listTileContainer: {
         flexDirection: 'row',
@@ -14,8 +13,8 @@ const styles = (Colors: any) => StyleSheet.create({
         marginBottom: 30
     },
     item: {
-        width: 300,
-        height: 400,
+        width: 200,
+        height: 200,
         marginRight: 30,
         borderWidth: 1,
         borderRadius: 20,
@@ -47,7 +46,7 @@ const BrandsList = ({ data, heading }: any) => {
     return (
         <View style={styles(Colors).mainContainer}>
             <View style={[Layout.fullWidth, styles(Colors).listTileContainer]}>
-                <Text style={{ color: Colors.white, fontSize: 30, width: 120 }}>{heading}</Text>
+                <Text style={{ color: Colors.white, fontSize: 20, width: 80 }}>{heading}</Text>
                 <View style={{ height: 2, flexGrow: 1, flex: 1, backgroundColor: Colors.white, alignSelf: 'flex-end' }}></View>
             </View>
             <FlatList

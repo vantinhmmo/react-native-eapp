@@ -4,8 +4,8 @@ import { useTheme } from '../../hooks';
 
 const styles = (Colors: any) => StyleSheet.create({
     mainContainer: {
-        paddingHorizontal: 30,
-        paddingVertical: 40,
+        paddingHorizontal: 20,
+        paddingVertical: 30,
     },
     listTileContainer: {
         flexDirection: 'row',
@@ -14,11 +14,11 @@ const styles = (Colors: any) => StyleSheet.create({
         marginBottom: 30
     },
     item: {
-        width: 300,
-        height: 600,
-        marginRight: 30,
+        width: 180,
+        height: 320,
+        marginRight: 15,
         borderWidth: 1,
-        borderRadius: 20,
+        borderRadius: 10,
         backgroundColor: Colors.white,
         overflow: 'hidden'
     },
@@ -33,15 +33,14 @@ const styles = (Colors: any) => StyleSheet.create({
         elevation: 5,
     },
     title: {
-        height: 50,
-        marginTop: 20,
-        paddingHorizontal: 20,
-        fontSize: 30,
+        paddingHorizontal: 15,
+        paddingVertical: 5,
+        fontSize: 18,
         color: '#6b6b6b'
     },
     itemDesc: {
+        paddingVertical: 5,
         width: '100%',
-        height: 60,
         justifyContent: 'space-between',
         paddingHorizontal: 15,
         backgroundColor: '#eee',
@@ -70,10 +69,10 @@ const ComicsList = ({ navigation, data, heading }: any) => {
             </View>
             <Text style={[styles(Colors).title]}>{item.title}</Text>
             <View style={[Layout.row, styles(Colors).itemDesc]}>
-                <Text style={{ fontSize: 20 }}>1982</Text>
+                <Text style={{ fontSize: 16 }}>1982</Text>
                 <View style={[Layout.row]}>
-                    <Image source={Images.gemIcon} style={[Gutters.tinyRMargin, { width: 30, height: 30 }]} />
-                    <Text style={{ fontSize: 24 }}>6.99</Text>
+                    <Image source={Images.gemIcon} style={[Gutters.tinyRMargin, { width: 20, height: 20 }]} />
+                    <Text style={{ fontSize: 16 }}>6.99</Text>
                 </View>
             </View>
         </TouchableOpacity >
@@ -82,7 +81,7 @@ const ComicsList = ({ navigation, data, heading }: any) => {
     return (
         <View style={styles(Colors).mainContainer}>
             <View style={[Layout.fullWidth, styles(Colors).listTileContainer]}>
-                <Text style={{ color: Colors.white, fontSize: 30, width: 120 }}>{heading}</Text>
+                <Text style={{ color: Colors.white, fontSize: 20, width: 80 }}>{heading}</Text>
                 <View style={{ height: 2, flexGrow: 1, flex: 1, backgroundColor: Colors.white, alignSelf: 'flex-end' }}></View>
             </View>
             <FlatList
