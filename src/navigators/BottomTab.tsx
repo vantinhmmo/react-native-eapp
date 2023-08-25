@@ -1,47 +1,97 @@
 
 import { Image, StyleSheet } from 'react-native';
-
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import collectionIcon = require('../theme/assets/images/collection.png')
-import { Example } from '../screens';
+
+import { Comic, Store } from '../screens';
+import { useTheme } from '../hooks';
+// import { ApplicationStackParamList } from '../../@types/navigation';
 
 const Tab = createBottomTabNavigator();
 
 const styles = StyleSheet.create({
-    icon: {
-        width: 26,
-        height: 26,
+    tabBarStyle: {
+        height: 100,
+        paddingTop: 20,
+        paddingBottom: 10,
     },
+    icon: {
+        width: 40,
+        height: 40,
+        marginBottom: 10
+    },
+    tabBarLabelStyle: {
+        fontSize: 20
+    }
 });
 
 
+
 function BottomTab() {
+    const { Images } = useTheme();
+
     return (
         <Tab.Navigator
-            initialRouteName="Feed"
+            initialRouteName="Store"
             screenOptions={{
-                tabBarActiveTintColor: '#e91e63',
-                tabBarInactiveTintColor: 'white'
+                headerShown: false,
+                tabBarActiveTintColor: '#1fd2ea',
+                tabBarInactiveTintColor: 'white',
+                tabBarLabelPosition: 'below-icon',
+                tabBarStyle: styles.tabBarStyle,
+                tabBarLabelStyle: styles.tabBarLabelStyle
             }}
         >
             <Tab.Screen
-                name="Collections"
-                component={Example}
+                name="Store"
+                component={Store}
                 options={{
-                    tabBarLabel: 'Collections',
+                    tabBarLabel: 'Store',
                     tabBarIcon: ({ color }) => <Image
-                        source={collectionIcon}
+                        source={Images.bottomTabIcon.storeIcon}
                         style={[styles.icon, { tintColor: color }]}
                     />
                 }}
             />
             <Tab.Screen
-                name="Settings"
-                component={Example}
+                name="Collections"
+                component={Comic}
                 options={{
-                    tabBarLabel: 'Settings',
+                    tabBarLabel: 'Collections',
                     tabBarIcon: ({ color }) => <Image
-                        source={collectionIcon}
+                        source={Images.bottomTabIcon.collectionIcon}
+                        style={[styles.icon, { tintColor: color }]}
+                    />
+                }}
+            />
+            <Tab.Screen
+                name="Feed"
+                component={Comic}
+                options={{
+                    tabBarLabel: 'Feed',
+                    tabBarIcon: ({ color }) => <Image
+                        source={Images.bottomTabIcon.feedIcon}
+                        style={[styles.icon, { tintColor: color }]}
+                    />
+                }}
+            />
+            <Tab.Screen
+                name="Market"
+                component={Comic}
+                options={{
+                    tabBarLabel: 'Market',
+                    tabBarIcon: ({ color }) => <Image
+                        source={Images.bottomTabIcon.marketIcon}
+                        style={[styles.icon, { tintColor: color }]}
+                    />
+                }}
+            />
+            <Tab.Screen
+                name="Profile"
+                component={Comic}
+                options={{
+                    tabBarLabel: 'Profile',
+                    tabBarIcon: ({ color }) => <Image
+                        source={Images.bottomTabIcon.profileIcon}
                         style={[styles.icon, { tintColor: color }]}
                     />
                 }}

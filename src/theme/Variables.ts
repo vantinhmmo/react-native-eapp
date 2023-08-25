@@ -18,7 +18,9 @@ export const Colors = {
   textGray800: '#000000',
   textGray400: '#4D4D4D',
   textGray200: '#A1A1A1',
-  primary: '#E14032',
+  textGray: '#2c2c2c',
+  primary: '#4f4f4f',
+  statusBar: '#2d2d2d',
   success: '#28a745',
   error: '#dc3545',
   //ComponentColors
@@ -28,7 +30,7 @@ export const Colors = {
 
 export const NavigationColors: Partial<ThemeNavigationColors> = {
   primary: Colors.primary,
-  background: '#EFEFEF',
+  background: '#4f4f4f',
   card: '#EFEFEF',
 };
 
